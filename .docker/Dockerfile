@@ -5,8 +5,8 @@ WORKDIR /aws
 
 COPY package.json /aws
 
-RUN npm install
+RUN yarn
 
 EXPOSE 1337/tcp
 
-CMD ["npm","run", "start"]
+CMD ["yarn", "start"]
