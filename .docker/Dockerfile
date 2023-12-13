@@ -1,28 +1,13 @@
-# Creating multi-stage build for production
-FROM node:lts as build
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git > /dev/null 2>&1
-ENV NODE_ENV=production
+FROM node:latest
 
-WORKDIR /opt/
-COPY package.json yarn.lock ./
-RUN yarn global add node-gyp
-RUN yarn config set network-timeout 600000 -g && yarn install --production
-ENV PATH /opt/node_modules/.bin:$PATH
-WORKDIR /opt/app
-COPY . .
-RUN yarn build
+RUN mkdir -p /aws/app
+WORKDIR /aws
 
-# Creating final production image
-FROM node:lts
-RUN apk add --no-cache vips-dev
-ENV NODE_ENV=production
-WORKDIR /opt/
-COPY --from=build /opt/node_modules ./node_modules
-WORKDIR /opt/app
-COPY --from=build /opt/app ./
-ENV PATH /opt/node_modules/.bin:$PATH
+COPY package.json /aws
+COPY app /aws/app
 
-RUN chown -R node:node /opt/app
-USER node
+RUN yarn
+
 EXPOSE 1337/tcp
-CMD ["yarn", "start"]
+
+CMD ["npm", "run", "start"]
