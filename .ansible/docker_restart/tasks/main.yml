@@ -1,0 +1,21 @@
+- name: Build docker image
+  docker_image:
+    name: strapi_aws_image
+    force_source: true
+    source: build
+    build:
+      path: "{{ APP_PATH }}"
+      dockerfile: .docker/Dockerfile
+
+- name: Run docker container
+  docker_container:
+    name: strapi_aws
+    image: strapi_aws_image
+    recreate: true
+    restart: true
+    ports:
+      # 1337:1337
+      # in system (server) : in container (docker)
+      - "{{ APP_PORT }}:{{ APP_PORT }}"
+    env:
+      NODE_ENV: "{{ NODE_ENV }}"
