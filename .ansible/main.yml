@@ -1,4 +1,4 @@
-- name: Build Dashboard app
+- name: Build My app
   hosts: all
   remote_user: ubuntu
   roles:
