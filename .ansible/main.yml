@@ -1,4 +1,4 @@
-- name: Build Strapi app
+- name: Build Dashboard app
   hosts: all
   remote_user: ubuntu
   roles:

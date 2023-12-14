@@ -1,35 +1,33 @@
 {
-  "name": "my-project",
+  "name": "next14-admin-panel",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
-  "license": "MIT",
-  "author": {
-    "name": "A Strapi developer"
-  },
   "scripts": {
-    "build": "strapi build",
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "strapi": "strapi"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.15.5",
-    "@strapi/plugin-i18n": "4.15.5",
-    "@strapi/plugin-users-permissions": "4.15.5",
-    "@strapi/strapi": "4.15.5",
-    "better-sqlite3": "8.6.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@next/eslint-plugin-next": "14.0.1",
+    "bcrypt": "^5.1.1",
+    "framer-motion": "^10.16.4",
+    "mongoose": "^8.0.0",
+    "next": "14.0.1",
+    "next-auth": "^5.0.0-beta.3",
+    "react": "18",
+    "react-dom": "18",
+    "react-icons": "^4.11.0",
+    "react-input-mask": "^3.0.0-alpha.2",
+    "recharts": "^2.9.0",
+    "use-debounce": "^9.0.4"
   },
-  "devDependencies": {},
-  "engines": {
-    "node": ">=18.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
-  },
-  "strapi": {
-    "uuid": "fcd1dd7d-e80b-4c79-8440-29e335083e5b"
+  "devDependencies": {
+    "eslint": "8",
+    "eslint-config-next": "14.0.1"
   }
 }

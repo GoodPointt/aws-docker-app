@@ -1,6 +1,6 @@
 - name: Build docker image
   docker_image:
-    name: strapi_aws_image
+    name: dashboard_aws_image
     force_source: true
     source: build
     build:
@@ -9,8 +9,8 @@
 
 - name: Run docker container
   docker_container:
-    name: strapi_aws
-    image: strapi_aws_image
+    name: dashboard_aws
+    image: dashboard_aws_image
     recreate: true
     restart: true
     ports:
