@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GoodPointt/aws-sqlite-strapi.git"
+    "url": "git+https://github.com/GoodPointt/aws-docker-app.git"
   },
   "keywords": [
     "aws",
@@ -26,9 +26,9 @@
   "author": "Dmytro Petyshyn",
   "license": "MIT",
   "bugs": {
-    "url": "https://GoodPointt/aws-sqlite-strapi/issues"
+    "url": "https://GoodPointt/aws-docker-app/issues"
   },
-  "homepage": "https://GoodPointt/aws-sqlite-strapi#readme",
+  "homepage": "https://GoodPointt/aws-docker-app#readme",
   "dependencies": {
     "express": "^4.18.2"
   },

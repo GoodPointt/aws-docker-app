@@ -8,6 +8,6 @@ COPY app /aws/app
 
 RUN npm install --omit=dev
 
-EXPOSE 3000/tcp
+EXPOSE 1337/tcp
 
 CMD ["npm", "run", "start"]
